@@ -28,12 +28,18 @@ Copy the URL and use it as below.
 
 ## Usage
 
+Call the deployed endpoint as below.
+
 To define your identity and the "requested" use, we will be using the `Authorization` header.
 
 - A combination such as `Authorization: graham#oso` _will_ work.
 - However, `Authorization: graham#gmail` _will not_ work.
 
 To better understand the permissions model, see `repositoriesDb` and `usersDb` in `index.ts`, as well as how they relate to the policy defined in `policy.polar`.
+
+## Remove
+
+Run `npm run teardown`.
 
 ## References
 
