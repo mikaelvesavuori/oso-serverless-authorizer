@@ -1,0 +1,39 @@
+{
+  "name": "oso-serverless-authorizer",
+  "version": "1.0.0",
+  "description": "This repository demonstrates a working implementation of Oso in an AWS Lambda context using TypeScript, and being deployed with Serverless Framework.",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "sls offline",
+    "deploy": "npx sls deploy",
+    "teardown": "npx sls remove",
+    "package": "npm run clean && npm run create:folders && tsc && npm run copy:files && npm run copy:modules && npm run zip",
+    "create:folders": "mkdir -p build/node_modules/oso && mkdir -p build/node_modules/lodash.isequal",
+    "copy:files": "cp package.json build && cp policy.polar build",
+    "copy:modules": "cp -R node_modules/oso build/node_modules && cp -R node_modules/lodash.isequal build/node_modules",
+    "clean": "rm -f authorizer.zip && rm -rf build",
+    "zip": "cd build && zip -r authorizer.zip . && cd .. && mv build/authorizer.zip .",
+    "zipinfo": "zipinfo authorizer.zip"
+  },
+  "keywords": [],
+  "author": "Mikael Vesavuori",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/aws-lambda": "8",
+    "@types/node": "18",
+    "@typescript-eslint/eslint-plugin": "5",
+    "@typescript-eslint/parser": "5",
+    "eslint": "8",
+    "eslint-config-prettier": "8",
+    "eslint-plugin-prettier": "4",
+    "prettier": "2",
+    "serverless": "3",
+    "serverless-offline": "11",
+    "ts-node": "10",
+    "typescript": "4"
+  },
+  "dependencies": {
+    "oso": "0.26.0"
+  }
+}
