@@ -8,7 +8,7 @@ This repository demonstrates a working implementation of [Oso](https://www.osohq
 
 Oso uses proprietary files in the `.polar` format to store the policies it will use.
 
-Assets and files like that tend to cause problems with bundlers, like Webpack, which is incredibly common (and useful) when building web applications.
+Assets and files like that tend to cause problems with bundlers, like Webpack, which are incredibly common (and useful) when building web applications.
 
 Despite trying several solutions for a few hours I was unable to get everything working the way you might expect with Webpack, Serverless Framework, and `serverless-offline`.
 
