@@ -16,7 +16,14 @@
     "zip": "cd build && zip -r authorizer.zip . && cd .. && mv build/authorizer.zip .",
     "zipinfo": "zipinfo authorizer.zip"
   },
-  "keywords": [],
+  "keywords": [
+    "aws",
+    "demo",
+    "oso",
+    "authorizer",
+    "serverless",
+    "serverless-authorizer"
+  ],
   "author": "Mikael Vesavuori",
   "license": "MIT",
   "devDependencies": {
